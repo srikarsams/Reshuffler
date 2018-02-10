@@ -1,4 +1,5 @@
 
+alert("Welcome to the TRX Reshuffling Tool! Click OK when you're ready!\n After providing all the inputs, please press 'CTRL+SHIFT+I' and copy the output!");
 //Input prompt for siteId
 
 var siteId = Number(prompt("Please enter the Site ID:"));
