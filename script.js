@@ -271,6 +271,186 @@ if (scenario === 2){
 
 }
 
+if (scenario === 3){
+	var tx = [];
+	var cell = [];
+	var band = [];
+	var ant = [];
+	var count1=0;
+	var count2=0;
+	var mctri = [];
+	for (var i=0;i < trxa.length;i++){
+		for (var z = 0;z < trxa[i];z++){
+			mctri.push(i);
+		}
+	}
+	for (var i = 0;i < (trxa.length / 2);i++){
+		count1 += trxa[i];
+	}
+	for (var i = (trxa.length / 2);i < trxa.length;i++){
+		count2 += trxa[i];
+	}
+	for(var i =0;i < (count1 + count2);i++){
+		tx.push(i);
+	}
+	for(var i = 0;i < trxa.length;i++){
+		if(i < trxa.length/2){
+			for(var j = 0;j < trxa[i];j++){
+				band.push("900");
+				ant.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxa[i];k++){
+				band.push("1800");
+				ant.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxa.length;i++){
+		if(i === 0 || i === 2){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("A");
+			}
+		}
+		if(i === 1 || i === 3){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("C");
+			}
+		}
+	}
+	var tx_b = [];
+	var cell_b = [];
+	var band_b = [];
+	var ant_b = [];
+	var count1_b=0;
+	var count2_b=0;
+	var mctri_b = [];
+	for (var i=0;i < trxb.length;i++){
+		for (var z = 0;z < trxb[i];z++){
+			mctri_b.push(i);
+		}
+	}
+	for (var i = 0;i < (trxb.length / 2);i++){
+		count1_b += trxb[i];
+	}
+	for (var i = (trxb.length / 2);i < trxb.length;i++){
+		count2_b += trxb[i];
+	}
+	for(var i =0;i < (count1_b + count2_b);i++){
+		tx_b.push(i);
+	}
+	for(var i = 0;i < trxb.length;i++){
+		if(i < trxb.length/2){
+			for(var j = 0;j < trxb[i];j++){
+				band_b.push("900");
+				ant_b.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxb[i];k++){
+				band_b.push("1800");
+				ant_b.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxb.length;i++){
+			for(var j=0;j < trxb[i];j++){
+				cell_b.push("B");
+		}
+	}	
+
+}
+
+if (scenario === 4){
+	var tx = [];
+	var cell = [];
+	var band = [];
+	var ant = [];
+	var count1=0;
+	var count2=0;
+	var mctri = [];
+	for (var i=0;i < trxa.length;i++){
+		for (var z = 0;z < trxa[i];z++){
+			mctri.push(i);
+		}
+	}
+	for (var i = 0;i < (trxa.length / 2);i++){
+		count1 += trxa[i];
+	}
+	for (var i = (trxa.length / 2);i < trxa.length;i++){
+		count2 += trxa[i];
+	}
+	for(var i =0;i < (count1 + count2);i++){
+		tx.push(i);
+	}
+	for(var i = 0;i < trxa.length;i++){
+		if(i < trxa.length/2){
+			for(var j = 0;j < trxa[i];j++){
+				band.push("900");
+				ant.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxa[i];k++){
+				band.push("1800");
+				ant.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxa.length;i++){
+		if(i === 0 || i === 2){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("B");
+			}
+		}
+		if(i === 1 || i === 3){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("C");
+			}
+		}
+	}
+	var tx_b = [];
+	var cell_b = [];
+	var band_b = [];
+	var ant_b = [];
+	var count1_b=0;
+	var count2_b=0;
+	var mctri_b = [];
+	for (var i=0;i < trxb.length;i++){
+		for (var z = 0;z < trxb[i];z++){
+			mctri_b.push(i);
+		}
+	}
+	for (var i = 0;i < (trxb.length / 2);i++){
+		count1_b += trxb[i];
+	}
+	for (var i = (trxb.length / 2);i < trxb.length;i++){
+		count2_b += trxb[i];
+	}
+	for(var i =0;i < (count1_b + count2_b);i++){
+		tx_b.push(i);
+	}
+	for(var i = 0;i < trxb.length;i++){
+		if(i < trxb.length/2){
+			for(var j = 0;j < trxb[i];j++){
+				band_b.push("900");
+				ant_b.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxb[i];k++){
+				band_b.push("1800");
+				ant_b.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxb.length;i++){
+			for(var j=0;j < trxb[i];j++){
+				cell_b.push("A");
+		}
+	}	
+
+}
+
+
+
 // Generating the Deletion script.
 console.log("\n");
 console.log("DELETION SCRIPT: ");
