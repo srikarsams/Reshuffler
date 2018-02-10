@@ -182,6 +182,15 @@ if(scenario === 1){
 	}
 }
 
+if (scenario === 2){
+	var tx = [];
+	var cell = [];
+	var band = [];
+	var ant = [];
+	var count1=0;
+	var count2=0;
+	var mctri = [];
+}
 
 // Generating the Deletion script.
 console.log("\n");
@@ -376,3 +385,5 @@ for(var i =0;i < numOfPtg;i++){
 	trxNodeg(tgId[i]);
 	console.log("\n");
 }
+
+alert("Script generated! Press 'CTRL+SHIFT+I', then select the 'Console' tab and copy the output!\n If any errors found, please let me know!)
