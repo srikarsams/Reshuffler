@@ -190,6 +190,85 @@ if (scenario === 2){
 	var count1=0;
 	var count2=0;
 	var mctri = [];
+	for (var i=0;i < trxa.length;i++){
+		for (var z = 0;z < trxa[i];z++){
+			mctri.push(i);
+		}
+	}
+	for (var i = 0;i < (trxa.length / 2);i++){
+		count1 += trxa[i];
+	}
+	for (var i = (trxa.length / 2);i < trxa.length;i++){
+		count2 += trxa[i];
+	}
+	for(var i =0;i < (count1 + count2);i++){
+		tx.push(i);
+	}
+	for(var i = 0;i < trxa.length;i++){
+		if(i < trxa.length/2){
+			for(var j = 0;j < trxa[i];j++){
+				band.push("900");
+				ant.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxa[i];k++){
+				band.push("1800");
+				ant.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxa.length;i++){
+		if(i === 0 || i === 2){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("A");
+			}
+		}
+		if(i === 1 || i === 3){
+			for(var j=0;j < trxa[i];j++){
+				cell.push("B");
+			}
+		}
+	}
+	var tx_b = [];
+	var cell_b = [];
+	var band_b = [];
+	var ant_b = [];
+	var count1_b=0;
+	var count2_b=0;
+	var mctri_b = [];
+	for (var i=0;i < trxb.length;i++){
+		for (var z = 0;z < trxb[i];z++){
+			mctri_b.push(i);
+		}
+	}
+	for (var i = 0;i < (trxb.length / 2);i++){
+		count1_b += trxb[i];
+	}
+	for (var i = (trxb.length / 2);i < trxb.length;i++){
+		count2_b += trxb[i];
+	}
+	for(var i =0;i < (count1_b + count2_b);i++){
+		tx_b.push(i);
+	}
+	for(var i = 0;i < trxb.length;i++){
+		if(i < trxb.length/2){
+			for(var j = 0;j < trxb[i];j++){
+				band_b.push("900");
+				ant_b.push("1");
+			}
+		}else{
+			for(var k = 0;k < trxb[i];k++){
+				band_b.push("1800");
+				ant_b.push("2");
+		}
+		}
+	}
+	for(var i =0;i < trxb.length;i++){
+			for(var j=0;j < trxb[i];j++){
+				cell_b.push("C");
+		}
+	}	
+
 }
 
 // Generating the Deletion script.
@@ -247,7 +326,7 @@ if(1 <= numOfPtg){
 if(2 <= numOfPtg){
 	for(var i =0;i < dug2Trx.length;i++){
 		for(var j = 0;j < dug2Trx[i].length;j++){
-			totalTrx[0]+=dug2Trx[i][j];
+			totalTrx[1]+=dug2Trx[i][j];
 		}
 	}
 }
@@ -255,7 +334,7 @@ if(2 <= numOfPtg){
 if(3 <= numOfPtg){
 	for(var i =0;i < dug3Trx.length;i++){
 		for(var j = 0;j < dug3Trx[i].length;j++){
-			totalTrx[0]+=dug3Trx[i][j];
+			totalTrx[2]+=dug3Trx[i][j];
 		}
 	}
 }
@@ -303,55 +382,123 @@ function trxInit(tgNum,num){
 }
 
 function trxCell(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOC:MO=RXOTRX-"+tgNum+"-" +tx[i]+",CELL="+siteId+cell[i]+";");
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOC:MO=RXOTRX-"+tgNum+"-" +tx[i]+",CELL="+siteId+cell[i]+";");
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOC:MO=RXOTRX-"+tgNum+"-" +tx_b[i]+",CELL="+siteId+cell_b[i]+";");
+		}
+	}else{
+
 	}
 }
 
 function trxBand(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOI:MO=RXOTX-"+tgNum+"-"+tx[i]+",BAND=GSM"+band[i]+",MPWR=40;");
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOI:MO=RXOTX-"+tgNum+"-"+tx[i]+",BAND=GSM"+band[i]+",MPWR=40;");
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOI:MO=RXOTX-"+tgNum+"-"+tx_b[i]+",BAND=GSM"+band_b[i]+",MPWR=40;");
+		}
+	}else{
+
 	}	
 }
 
 function trxAntenna(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOC:MO=RXOTX-"+tgNum+"-"+tx[i]+",ANT="+siteId+cell[i]+ant[i]+",CELL="+siteId+cell[i]+";");
-	}		
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOC:MO=RXOTX-"+tgNum+"-"+tx[i]+",ANT="+siteId+cell[i]+ant[i]+",CELL="+siteId+cell[i]+";");
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOC:MO=RXOTX-"+tgNum+"-"+tx_b[i]+",ANT="+siteId+cell_b[i]+ant_b[i]+",CELL="+siteId+cell_b[i]+";");
+		}
+	}else{
+
+	}
 }
 
 function trxRfBranch(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOI:MO=RXORX-"+tgNum+"-"+tx[i]+",BAND=GSM"+band[i]+",RXD=AB;");
-	}	
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOI:MO=RXORX-"+tgNum+"-"+tx[i]+",BAND=GSM"+band[i]+",RXD=AB;");
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOI:MO=RXORX-"+tgNum+"-"+tx_b[i]+",BAND=GSM"+band_b[i]+",RXD=AB;");
+		}
+	}else{
+
+	}
 }
 
 function trxTs(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOI:MO=RXOTS-"+tgNum+"-"+tx[i]+"-0&&-7;");
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOI:MO=RXOTS-"+tgNum+"-"+tx[i]+"-0&&-7;");
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOI:MO=RXOTS-"+tgNum+"-"+tx_b[i]+"-0&&-7;");
+		}
+	}else{
+
 	}
 }
 
 function trxMctr(tgNum){
-	for(var i = 0;i < trxa.length;i++){
-		if(trxa[i] > 0){
-			console.log("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MAXPWR=48,MAXTRX="+trxa[i]+";");
-	}
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < trxa.length;i++){
+			if(trxa[i] > 0){
+				console.log("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MAXPWR=48,MAXTRX="+trxa[i]+";");
+			}
+		}
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < trxb.length;i++){
+			if(trxb[i] > 0){
+				console.log("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx_b[i]+",MAXPWR=48,MAXTRX="+trxb[i]+";");
+			}
+		}
+	}else{
+
 	}	
 }
 
 function trxMixed(tgNum){
-	for(var i = 0;i < trxa.length;i++){
-		if(trxa[i] > 0){
-			console.log("RXMOC:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MIXEDMODE=ON;");
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < trxa.length;i++){
+			if(trxa[i] > 0){
+				console.log("RXMOC:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MIXEDMODE=ON;");
+			}
+		}		
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < trxb.length;i++){
+			if(trxb[i] > 0){
+				console.log("RXMOC:MO=RXOMCTR-"+tgNum+"-"+tx_b[i]+",MIXEDMODE=ON;");
+			}
+		}
+	}else{
+
 	}
-	}		
 }
 
 function trxMctri(tgNum){
-	for(var i = 0;i < (count1 + count2);i++){
-		console.log("RXMOC:MO=RXOTRX-"+tgNum+"-"+tx[i]+",MCTRI="+mctri[i]+";");
-	}	
+	if (tgNum === tgId[0]){
+		for(var i = 0;i < (count1 + count2);i++){
+			console.log("RXMOC:MO=RXOTRX-"+tgNum+"-"+tx[i]+",MCTRI="+mctri[i]+";");
+		}	
+	}else if(tgNum === tgId[1]){
+		for(var i = 0;i < (count1_b + count2_b);i++){
+			console.log("RXMOC:MO=RXOTRX-"+tgNum+"-"+tx_b[i]+",MCTRI="+mctri_b[i]+";");
+		}
+	}else{
+
+	}
 }
 
 function trxNodeg(tgNum){
@@ -364,7 +511,7 @@ function trxNodeg(tgNum){
 for(var i =0;i < numOfPtg;i++){
 	console.log("Script for TG " + tgId[i] + " :");
 	console.log("\n");
-	trxInit(tgId[i],totalTrx[0]);
+	trxInit(tgId[i],totalTrx[i]);
 	console.log("\n");
 	trxCell(tgId[i]);
 	console.log("\n");
@@ -386,4 +533,4 @@ for(var i =0;i < numOfPtg;i++){
 	console.log("\n");
 }
 
-alert("Script generated! Press 'CTRL+SHIFT+I', then select the 'Console' tab and copy the output!\n If any errors found, please let me know!)
+alert("Script generated! After pressing OK, pls press 'CTRL+SHIFT+I', then select the 'Console' tab and copy the output!\n If any errors found, please let me know!");
