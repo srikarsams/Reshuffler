@@ -11,24 +11,17 @@
 	<div class="container">
 		<div class="row">
 			<h1>TRX Reshuffling Tool</h1>
-			<p>Press the combination <span>"CTRL + SHIFT + I"</span> and select the tab "Console". Copy the output.</p>
+			<p>Press the "Generate Script" button and provide the inputs. Then press the "Scroll down" button for the script.</p>
 			<p id="left">**Please reload the tool before using again!</p>
-			<a class="button" id="button1" onclick="script();"> Generate Script</i></i></a>
+			<a class="button" id="button1" onClick="script();"> Generate Script</i></i></a>
 			<a class="button" href="mailto:srikar.samudrala@ericsson.com">Srikar Samudrala <i class="far fa-envelope-open"></i></a>
-			<a class="button don" href="#instruction">Scroll Down <i class="fas fa-arrow-circle-down"></i></i></a>
+			<a class="button don" href="#dlink" onClick="save();">Scroll Down <i class="fas fa-arrow-circle-down"></i></i></a>
 		</div>
-		<div id = "instruction">
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-xs-12">
-					<img src="inspect.PNG">
-				</div>
-				<div class="col-lg-4 col-md-6 col-xs-12">
-					<img src="console.png">
-				</div>
-				<div class="col-lg-4 col-md-6 col-xs-12">
-					<img src="code.PNG">
-				</div>
-			</div>
+		<div class="row">
+		<p id="dlink">Click Scroll Down button to generate download link</p>			
+		</div>
+		<div id="text">
+			
 		</div>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
