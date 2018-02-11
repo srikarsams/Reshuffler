@@ -572,8 +572,8 @@ if (scenario === 5){
 
 // Generating the Deletion script.
 console.log("\n");
-console.log("DELETION SCRIPT: ");
-console.log("====================");
+console.log("!!DELETION SCRIPT: ");
+console.log("\n");
 function deleteTg(tgNum) {
 	console.log("RXMOP:MO=RXOTG-"+tgNum+",subord;");
 	console.log("rxbli:mo=rxotg-"+tgNum+",subord,force;");
