@@ -1,4 +1,4 @@
-
+function script() {
 alert("Welcome to the TRX Reshuffling Tool! Click OK when you're ready!\n After providing all the inputs, please press 'CTRL+SHIFT+I' and copy the output!");
 //Input prompt for siteId
 
@@ -853,3 +853,5 @@ for(var i =0;i < numOfPtg;i++){
 }
 
 alert("Script generated! After pressing OK, pls press 'CTRL+SHIFT+I', then select the 'Console' tab and copy the output!\n If any errors found, please let me know!");
+
+};
