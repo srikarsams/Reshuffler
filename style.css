@@ -19,6 +19,10 @@ h1{
 	padding-right: 20px;
 	font-style: italic;
 }
+span{
+	font-family: Courier New;
+	font-size: 25px;
+}
 .container{
 	padding-top: 30px;
 	font-family: 'Roboto Condensed', sans-serif;
