@@ -19,6 +19,13 @@ h1{
 	margin-top:200px;
 	margin-bottom:200px;
 }
+.fa-arrow-circle-down{
+	font-size: 20px;
+}
+.don{
+	margin-left: 15px;
+	font-size: 20px;
+}
 .row{
 	text-align: center;
 }
