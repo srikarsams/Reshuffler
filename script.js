@@ -8,8 +8,8 @@ siteId = Number(prompt("Please enter the Site ID:"));
 
 //Input prompt for TRX config
 
-var trx900 = prompt("Please enter the TRX config. of G900:");
-var trx1800 = prompt("Please enter the TRX config. of G1800:");
+var trx900 = prompt("Please enter the TRX config. of G900: (For eg. 222)");
+var trx1800 = prompt("Please enter the TRX config. of G1800: (For eg. 222)");
 
 var TRX900 = [];
 var TRX1800 = [];
@@ -70,7 +70,7 @@ var scenario = 0;
 // console.log("Please find the Post-config below for the site " + siteId + " :" );
 // console.log("\n");
 newLin();
-printText("Please find the Post-config below for the site " + siteId + " :" );
+printText("!!Please find the Post-config below for the site " + siteId + " :" );
 newLin();
 if (numOfPtg === 1){
 	scenario = 1;
