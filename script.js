@@ -50,6 +50,8 @@ if (count <=12){
 } else if(count <= 24){
 	if (((combinedTrx[0] + combinedTrx[1]) <= 12) || ((combinedTrx[0] + combinedTrx[2]) <= 12) || ((combinedTrx[1] + combinedTrx[2]) <= 12)) {
 		numOfPtg = 2;
+	}else{
+		numOfPtg = 3;
 	}
 } else{
 		numOfPtg = 3;
