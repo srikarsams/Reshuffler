@@ -863,27 +863,33 @@ function trxMctr(tgNum){
 	// }
 	if(tgNum === tgId[0]){
 			for(var i=0;i < trxa.length;i++){
-				if(i < trxa.length/2){
+				if(i < trxa.length/2 && trxa[i] != 0){
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MAXPWR=48,MAXTRX="+trxa[i]+";");
-				}else{
+				}else if(trxa[i] === 0){
+				}
+				else{
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx[i]+",MAXPWR=46,MAXTRX="+trxa[i]+";");
 				}
 			}
 	}
 	if (tgNum === tgId[1]){
 			for(var i=0;i < trxb.length;i++){
-				if(i < trxb.length/2){
+				if(i < trxb.length/2 && trxb[i]!=0){
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx_b[i]+",MAXPWR=48,MAXTRX="+trxb[i]+";");
-				}else{
+				}else if(trxb[i] === 0){
+				}
+				else{
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx_b[i]+",MAXPWR=46,MAXTRX="+trxb[i]+";");
 				}
 			}		
 	}
 	if (tgNum === tgId[2]){
 			for(var i=0;i < trxc.length;i++){
-				if(i < trxc.length/2){
+				if(i < trxc.length/2 && trxc[i]!=0){
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx_c[i]+",MAXPWR=48,MAXTRX="+trxc[i]+";");
-				}else{
+				}else if(trxc[i] === 0){
+				}
+				else{
 					printText("RXMOi:MO=RXOMCTR-"+tgNum+"-"+tx_c[i]+",MAXPWR=46,MAXTRX="+trxc[i]+";");
 				}
 			}		
