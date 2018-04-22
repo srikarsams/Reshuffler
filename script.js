@@ -27,9 +27,11 @@ for (var i = 0;i < trx1800.length;i++) {
 var numOfTg = Number(prompt("Please enter the number of DUGS installed onsite:"));
 
 var tgId = [];
+var serial = [];
 
 for (var i = 0;i < numOfTg;i++){
 	tgId[i] = Number(prompt("Please enter the TG" +i +" :"));
+	serial[i]= prompt("Please enter the serial of TG" + i + " :");
 }
 
 //Deciding the post TRX config.
@@ -79,7 +81,7 @@ if (numOfPtg === 1){
 	var dug1Trx = [TRX900,TRX1800];
 	// console.log("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ");
 	// console.log("=================");
-	printText("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ")
+	printText("DUG1" + "[" + tgId[0] + "] " + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ")
 	printText("=================");
 } else if(numOfPtg === 2){
 	if((combinedTrx[0] + combinedTrx[1]) <= 12){
@@ -89,8 +91,8 @@ if (numOfPtg === 1){
 		// console.log("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "]: ");
 		// console.log("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: ");
 		// console.log("=================");
-		printText("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "]: ");
-		printText("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: ");
+		printText("DUG1" + "[" + tgId[0] + "]" + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "]: ");
+		printText("DUG2" + "[" + tgId[1] + "]" + "[" + serial[1] + "]" + " :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: ");
 		printText("=================");
 	}else if((combinedTrx[0] + combinedTrx[2]) <= 12) {
 		scenario = 3;
@@ -99,8 +101,8 @@ if (numOfPtg === 1){
 		// console.log("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[2] + "]: ");
 		// console.log("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
 		// console.log("=================");
-		printText("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[2] + "]: ");
-		printText("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
+		printText("DUG1" + "[" + tgId[0] + "]" + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[2] + "]: ");
+		printText("DUG2" + "[" + tgId[1] + "]" + "[" + serial[1] + "]" + " :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
 		printText("=================");
 	}else{
 		scenario = 4;
@@ -109,8 +111,8 @@ if (numOfPtg === 1){
 		// console.log("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[1] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[1] + "|" + TRX1800[2] + "]: ");
 		// console.log("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[0] + "] " + "G1800[" + TRX1800[0] + "]: ");
 		// console.log("=================");
-		printText("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[1] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[1] + "|" + TRX1800[2] + "]:" );
-		printText("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[0] + "] " + "G1800[" + TRX1800[0] + "]: ");
+		printText("DUG1" + "[" + tgId[0] + "]" + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[1] + "|" + TRX900[2] + "] " + "G1800[" + TRX1800[1] + "|" + TRX1800[2] + "]:" );
+		printText("DUG2" + "[" + tgId[1] + "]" + "[" + serial[1] + "]" + " :" + "G900[" + TRX900[0] + "] " + "G1800[" + TRX1800[0] + "]: ");
 		printText("=================");
 	}	
 }else{
@@ -122,9 +124,9 @@ if (numOfPtg === 1){
 	// console.log("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
 	// console.log("DUG3" + "[" + tgId[2] + "] :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: "); 
 	// console.log("=================");
-	printText("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "] " + "G1800[" + TRX1800[0] + "]: ");
-	printText("DUG2" + "[" + tgId[1] + "] :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
-	printText("DUG3" + "[" + tgId[2] + "] :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: ");
+	printText("DUG1" + "[" + tgId[0] + "] " + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "] " + "G1800[" + TRX1800[0] + "]: ");
+	printText("DUG2" + "[" + tgId[1] + "] " + "[" + serial[1] + "]" + " :" + "G900[" + TRX900[1] + "] " + "G1800[" + TRX1800[1] + "]: ");
+	printText("DUG3" + "[" + tgId[2] + "] " + "[" + serial[2] + "]" + " :" + "G900[" + TRX900[2] + "] " + "G1800[" + TRX1800[2] + "]: ");
 	printText("=================");
 }
 
