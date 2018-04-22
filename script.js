@@ -81,7 +81,7 @@ if (numOfPtg === 1){
 	var dug1Trx = [TRX900,TRX1800];
 	// console.log("DUG1" + "[" + tgId[0] + "] :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ");
 	// console.log("=================");
-	printText("DUG1" + "[" + tgId[0] + "] " + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ")
+	printText("DUG1" + "[" + tgId[0] + "]" + "[" + serial[0] + "]" + " :" + "G900[" + TRX900[0] + "|" + TRX900[1] + "|"  + TRX900[2] + "] " + "G1800[" + TRX1800[0] + "|" + TRX1800[1] + "|"  + TRX1800[2] + "]: ")
 	printText("=================");
 } else if(numOfPtg === 2){
 	if((combinedTrx[0] + combinedTrx[1]) <= 12){
